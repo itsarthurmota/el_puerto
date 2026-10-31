@@ -1,401 +1,465 @@
-<style>
-    /* ==========================================================================
-       1. VARIÁVEIS DO STYLE GUIDE (DESIGN SYSTEM)
-       ========================================================================== */
-    :root {
-      /* Cores */
-      --color-primary-navy: #001953;
-      --color-primary-cyan: #00ACC1;
-      --color-accent-coral: #FF8A65;
-      --color-accent-yellow: #FFE082;
-      --color-bg-light: #F9F9F9;
-      --color-bg-cream: #FCF4D8;
-      --color-text-dark: #263238;
-      --color-white: #FFFFFF;
 
-      /* Tipografia */
-      --font-title: 'Poppins', sans-serif;
-      --font-body: 'Noto Sans', sans-serif;
-    }
+:root {
+  /* Cores */
+  --color-primary-navy: #001953;
+  --color-primary-cyan: #00ACC1;
+  --color-accent-coral: #FF8A65;
+  --color-accent-yellow: #FFE082;
+  --color-bg-light: #F9F9F9;
+  --color-bg-cream: #FCF4D8;
+  --color-text-dark: #263238;
+  --color-white: #FFFFFF;
+  
+  /* Tipografia */
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
 
-    /* Reset global */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: var(--font-body);
-      color: var(--color-text-dark);
-      background-color: var(--color-bg-light);
-      line-height: 1.6;
-    }
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  padding-top: 85px; /* Evita que o conteúdo fique debaixo do header fixo */
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    ul {
-      list-style: none;
-    }
+ul {
+  list-style: none;
+}
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    /* ==========================================================================
-       2. COMPONENTES REUTILIZÁVEIS
-       ========================================================================== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+/* ==========================================================================
+   2. COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
-    .btn {
-      display: inline-block;
-      font-family: var(--font-title);
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.85rem 1.8rem;
-      border-radius: 50px;
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s ease;
-    }
+.btn {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
 
-    .btn-primary {
-      background-color: var(--color-accent-coral);
-      color: var(--color-white);
-    }
+.btn-primary {
+  background-color: var(--color-accent-coral);
+  color: var(--color-white);
+}
 
-    .btn-primary:hover {
-      background-color: #e57350;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 138, 101, 0.3);
-    }
+.btn-primary:hover {
+  background-color: #e57350;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 138, 101, 0.3);
+}
 
-    .btn-secondary {
-      background-color: transparent;
-      color: var(--color-primary-navy);
-      border: 2px solid var(--color-primary-navy);
-    }
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-navy);
+  border: 2px solid var(--color-primary-navy);
+}
 
-    .btn-secondary:hover {
-      background-color: var(--color-primary-navy);
-      color: var(--color-white);
-    }
+.btn-secondary:hover {
+  background-color: var(--color-primary-navy);
+  color: var(--color-white);
+}
 
-    .section-title {
-      font-family: var(--font-title);
-      font-size: 2.2rem;
-      color: var(--color-primary-navy);
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  color: var(--color-primary-navy);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 
-    .section-subtitle {
-      text-align: center;
-      color: var(--color-primary-cyan);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 3rem;
-      font-size: 0.9rem;
-    }
+.section-subtitle {
+  text-align: center;
+  color: var(--color-primary-cyan);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+}
 
-    /* ==========================================================================
-       3. NAVEGAÇÃO E CABEÇALHO
-       ========================================================================== */
-    .header {
-      background-color: var(--color-white);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: all 0.3s ease-in-out;
-    }
+/* ==========================================================================
+   3. NAVEGAÇÃO E CABEÇALHO (ANIMADO E RESPONSIVO)
+   ========================================================================== */
+.header {
+  background-color: var(--color-bg-cream);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
 
-    .header.scrolled{
-    background-color: rgba(0, 25, 83, 0.9); /* Azul marinho translúcido */
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco moderno */
-    padding: 0.5rem 0; /* Diminui a altura do header */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-    /* Ajuste de cor dos links do menu quando o header estiver escuro no scroll */
-    .header.scrolled .nav-link {
-      color: var(--color-white);
-    }
+/* Estado quando a página é rolada */
+.header.scrolled {
+  background-color: rgba(252, 244, 216, 1);
+  backdrop-filter: blur(10px);
+  padding: 0.3rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
 
-    .header.scrolled .nav-link:hover {
-      color: var(--color-accent-yellow);
-    }
+.header.scrolled .nav-link {
+  color: var(--color-text-dark);
+}
 
-    /* Transição suave para o tamanho da logo */
-    .logo-img {
-      max-width: 110px; /* Tamanho normal da logo */
-      height: auto;
-      display: block;
-      transition: max-width 0.3s ease-in-out; /* Anima a redução */
-    }
+.header.scrolled .nav-link:hover {
+  color: var(--color-primary-cyan);
+}
 
-    /* A logo diminui quando a classe scrolled é ativada */
-    .header.scrolled .logo-img {
-      max-width: 75px; /* Tamanho reduzido da logo ao rolar */
-    }
+.nav-container {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
 
-    /* Adicione um espaçamento no topo do body para o conteúdo não ficar escondido debaixo do header fixo */
-    body {
-      padding-top: 85px; 
-    }
+.logo-link {
+  display: flex;
+  align-items: center;
+  margin-left: -0.2rem;
+}
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between; /* Separa a logo (esquerda) e o menu (direita) */
-      align-items: center;            /* Alinha todos os itens verticalmente ao centro */
-      padding: 1rem 2rem;
-    }
+.logo-img {
+  max-width: 110px;
+  height: auto;
+  display: block;
+  transition: max-width 0.3s ease-in-out;
+}
 
-    .logo-link {
-      display: flex;
-      align-items: center;
-    }
-    
-    .logo-img {
-      max-width: 120px; /* Ajuste o tamanho da logo conforme preferir */
-      height: auto;
-      display: block;
-    }
+/* Animação da logo ao rolar */
+.header.scrolled .logo-img {
+  max-width: 75px;
+}
 
-    .nav-menu {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
 
-    .nav-link {
-      font-family: var(--font-title);
-      font-weight: 500;
-      color: var(--color-text-dark);
-      transition: color 0.3s ease;
-    }
+.nav-link {
+  font-family: var(--font-title);
+  font-weight: 500;
+  color: var(--color-text-dark);
+  transition: color 0.3s ease;
+}
 
-    .nav-link:hover {
-      color: var(--color-primary-cyan);
-    }
+.nav-link:hover {
+  color: var(--color-primary-cyan);
+}
 
-    /* ==========================================================================
-       4. SECÇÃO PRINCIPAL (HERO)
-       ========================================================================== */
-    .hero {
-      background: linear-gradient(rgba(0, 25, 83, 0.75), rgba(0, 25, 83, 0.75)), 
-                  url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      color: var(--color-white);
-      padding: 8rem 0;
-      text-align: center;
-    }
+/* Botão Hambúrguer para Celulares */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
 
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary-navy);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
 
-    .hero-tag {
-      background-color: var(--color-accent-yellow);
-      color: var(--color-primary-navy);
-      font-family: var(--font-title);
-      font-weight: 600;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-    }
+.header.scrolled .hamburger span {
+  background-color: var(--color-text-dark);
+}
 
-    .hero-title {
-      font-family: var(--font-title);
-      font-size: 3.2rem;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
+/* Animação do botão Hambúrguer quando ativo */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
 
-    .hero-description {
-      font-size: 1.15rem;
-      margin-bottom: 2.5rem;
-      color: var(--color-bg-cream);
-    }
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
 
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-    }
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
 
+/* ==========================================================================
+   4. SECÇÃO PRINCIPAL (HERO)
+   ========================================================================== */
+.hero {
+  background: linear-gradient(rgba(0, 25, 83, 0.75), rgba(0, 25, 83, 0.75)), 
+              url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: var(--color-white);
+  padding: 8rem 0;
+  text-align: center;
+}
 
-    /* ==========================================================================
-       5. CARDÁPIO EM DESTAQUE
-       ========================================================================== */
-    .menu-section {
-      padding: 6rem 0;
-      background-color: var(--color-bg-light);
-    }
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
+.hero-tag {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
 
-    .card {
-      background-color: var(--color-white);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
-    }
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.hero-description {
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-bg-cream);
+}
 
-    .card-img {
-      height: 220px;
-      width: 100%;
-      object-fit: cover;
-    }
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
 
-    .card-body {
-      padding: 1.5rem;
-    }
+/* ==========================================================================
+   5. CARDÁPIO EM DESTAQUE
+   ========================================================================== */
+.menu-section {
+  padding: 6rem 0;
+  background-color: var(--color-bg-light);
+}
 
-    .card-title-price {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.8rem;
-    }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
 
-    .card-title {
-      font-family: var(--font-title);
-      font-size: 1.25rem;
-      color: var(--color-primary-navy);
-    }
+.card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
 
-    .card-price {
-      font-family: var(--font-title);
-      font-weight: 700;
-      color: var(--color-accent-coral);
-      font-size: 1.2rem;
-    }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-    .card-text {
-      font-size: 0.95rem;
-      color: var(--color-text-dark);
-      opacity: 0.85;
-    }
+.card-img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
 
-    /* ==========================================================================
-       6. SOBRE O RESTAURANTE
-       ========================================================================== */
-    .about-section {
-      padding: 6rem 0;
-      background-color: var(--color-bg-cream);
-    }
+.card-body {
+  padding: 1.5rem;
+}
 
-    .about-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
+.card-title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
 
-    .about-img {
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
+.card-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--color-primary-navy);
+}
 
-    .about-text h2 {
-      font-family: var(--font-title);
-      font-size: 2.4rem;
-      color: var(--color-primary-navy);
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
-    }
+.card-price {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--color-accent-coral);
+  font-size: 1.2rem;
+}
 
-    .about-text p {
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
-    }
+.card-text {
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  opacity: 0.85;
+}
 
-    /* ==========================================================================
-       7. RODAPÉ
-       ========================================================================== */
-    .footer {
-      background-color: var(--color-primary-navy);
-      color: var(--color-white);
-      padding: 4rem 0 2rem 0;
-    }
+/* ==========================================================================
+   6. SOBRE O RESTAURANTE
+   ========================================================================== */
+.about-section {
+  padding: 6rem 0;
+  background-color: var(--color-bg-cream);
+}
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
 
-    .footer-brand .logo {
-      color: var(--color-white);
-      margin-bottom: 1rem;
-    }
+.about-img {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
 
-    .footer-title {
-      font-family: var(--font-title);
-      font-size: 1.2rem;
-      color: var(--color-accent-yellow);
-      margin-bottom: 1.2rem;
-    }
+.about-text h2 {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  color: var(--color-primary-navy);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
 
-    .footer-info p {
-      margin-bottom: 0.5rem;
-      opacity: 0.8;
-    }
+.about-text p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.6;
-    }
+/* ==========================================================================
+   7. RODAPÉ
+   ========================================================================== */
+.footer {
+  background-color: var(--color-primary-navy);
+  color: var(--color-white);
+  padding: 4rem 0 2rem 0;
+}
 
-    /* ==========================================================================
-       8. RESPONSIVIDADE (MEDIA QUERIES)
-       ========================================================================== */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.2rem;
-      }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
 
-      .about-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+.footer-brand .logo {
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
 
-      .nav-menu {
-        display: none; /* Em projetos complexos, pode ser trocado por um menu hambúrguer */
-      }
+.footer-title {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  color: var(--color-accent-yellow);
+  margin-bottom: 1.2rem;
+}
 
+.footer-info p {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
 
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
 
+/* ==========================================================================
+   8. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .nav-container {
+    padding-inline: 1rem;
+  }
 
+  .nav-container nav {
+    position: static;
+    width: 0;
+  }
 
-    }
-  </style>
+  .hamburger {
+    display: flex; /* Exibe o botão hambúrguer no celular */
+    margin-left: auto;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(75%, 22rem);
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--color-primary-navy);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+  }
+
+  .nav-menu.active {
+    right: 0; /* Faz o menu deslizar para dentro da tela ao clicar */
+  }
+
+  .nav-menu .nav-link {
+    color: var(--color-white);
+    font-size: 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
