@@ -217,7 +217,7 @@ img {
 }
 
 .header.scrolled .hamburger span {
-  background-color: var(--color-primary-navy);
+  background-color: var(--color-accent-coral);
 }
 
 /* Animação do botão Hambúrguer quando ativo */
