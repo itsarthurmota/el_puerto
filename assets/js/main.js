@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = hamburger.classList.toggle('active');
       navMenu.classList.toggle('active', isOpen);
       hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Fechar Menu' : 'Abrir Menu');
     });
 
     // Fechar o menu automaticamente ao clicar em qualquer link
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Abrir Menu');
       });
     });
   }
