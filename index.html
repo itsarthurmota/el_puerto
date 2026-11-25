@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Puerto. | Frutos del Mar</title>
+
+  <!-- Google Fonts: Poppins (Títulos e Botões) e Noto Sans (Texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="header navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo-link">
+        <img src="assets/images/logo-puerto.png" alt="logo elpuerto" class="logo-img">
+      </a>
+      
+      <!-- Botão Hambúrguer (Visível no Celular) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir Menu" aria-controls="nav-menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menu de Navegação -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link">Início</a></li>
+          <li><a href="#cardapio" class="nav-link">Cardápio</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+          <li><a href="#contato" class="btn btn-primary">Reservar Mesa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SEÇÃO PRINCIPAL (HERO) -->
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <span class="hero-tag">Caribenha Seafood & Mexican Paradise</span>
+      <h1 class="hero-title">O verdadeiro sabor das costas caribenhas num só lugar.</h1>
+      <p class="hero-description">Ingredientes frescos do mar, receitas artesanais e a autêntica paixão pela gastronomia caribenha e mexicana.</p>
+      <div class="hero-buttons">
+        <a href="#cardapio" class="btn btn-primary">Explorar Cardápio</a>
+        <a href="#sobre" class="btn btn-secondary" style="color: white; border-color: white;">Nossa História</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO EM DESTAQUE -->
+  <section id="cardapio" class="menu-section">
+    <div class="container">
+      <h2 class="section-title">Especialidades da Casa</h2>
+      <p class="section-subtitle">Preparados diariamente com frutos do mar frescos</p>
+
+      <div class="cards-grid">
+        <!-- Prato 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80" alt="Baja Fish Tacos" class="card-img">
+          <div class="card-body">
+            <div class="card-title-price">
+              <h3 class="card-title">Baja Fish Tacos</h3>
+              <span class="card-price">R$ 54,50</span>
+            </div>
+            <p class="card-text">Tortilhas artesanais de milho, peixe fresco crocante, repolho roxo fatiado e molho cremoso de coentros e lima.</p>
+          </div>
+        </article>
+
+        <!-- Prato 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=600&q=80" alt="Ceviche Acapulco" class="card-img">
+          <div class="card-body">
+            <div class="card-title-price">
+              <h3 class="card-title">Ceviche Acapulco</h3>
+              <span class="card-price">R$ 46,90</span>
+            </div>
+            <p class="card-text">Peixe branco marinado no sumo de lima, tomate fresco, cebola roxa, pimenta serrano e tostas de banana-da-terra.</p>
+          </div>
+        </article>
+
+        <!-- Prato 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80" alt="Aguachile Verde de Camarão" class="card-img">
+          <div class="card-body">
+            <div class="card-title-price">
+              <h3 class="card-title">Aguachile Verde</h3>
+              <span class="card-price">R$ 38,60</span>
+            </div>
+            <p class="card-text">Camarões selecionados marinados em molho cítrico de pimenta jalapeño, coentros frescos, pepino e abacate.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE O RESTAURANTE -->
+  <section id="sobre" class="about-section">
+    <div class="container about-wrapper">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Ambiente do restaurante El Puerto" class="about-img">
+      <div class="about-text">
+        <h2>Do mar diretamente para a sua mesa.</h2>
+        <p>No <strong>El Puerto</strong>, combinamos a riqueza da tradição culinária das costas mexicanas com o frescor dos melhores frutos do mar. A nossa missão é proporcionar uma experiência gastronómica acolhedora e inesquecível.</p>
+        <p>Cada prato é preparado com ingredientes selecionados, ervas frescas e temperos autênticos para transportá-lo diretamente para um refúgio tropical à beira-mar.</p>
+        <br>
+        <a href="#contato" class="btn btn-primary">Conheça o Nosso Espaço</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="contato" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">el puerto<span>.</span></a>
+          <p style="margin-top: 1rem; opacity: 0.8;">Frutos del Mar & Mexican Paradise.</p>
+        </div>
+
+        <div class="footer-info">
+          <h4 class="footer-title">Localização</h4>
+          <p>Av. Beira-Mar, nº 104</p>
+          <p>Praia do Sol - Portugal</p>
+        </div>
+
+        <div class="footer-info">
+          <h4 class="footer-title">Horário de Funcionamento</h4>
+          <p>Terça a Sexta: 12h00 – 23h00</p>
+          <p>Sábado e Domingo: 12h00 – 00h00</p>
+          <p>Encerrado às Segundas-feiras</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 El Puerto. Todos os direitos reservados. Projeto Académico SENAI.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Importação do JavaScript para Animação e Responsividade -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
