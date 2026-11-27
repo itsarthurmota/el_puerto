@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link, .nav-menu .btn');
 
-  // 1. Animação de Scroll do Header
+  
   if (header) {
     const updateHeader = () => {
       header.classList.toggle('scrolled', window.scrollY > 20);
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeader, { passive: true });
   }
 
-  // 2. Abrir / Fechar Menu Hambúrguer no Celular
+  
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       const isOpen = hamburger.classList.toggle('active');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-label', isOpen ? 'Fechar Menu' : 'Abrir Menu');
     });
 
-    // Fechar o menu automaticamente ao clicar em qualquer link
+    
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');

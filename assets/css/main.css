@@ -1,6 +1,6 @@
 
 :root {
-  /* Cores */
+
   --color-primary-navy: #001953;
   --color-primary-cyan: #00ACC1;
   --color-accent-coral: #FF8A65;
@@ -10,12 +10,12 @@
   --color-text-dark: #263238;
   --color-white: #FFFFFF;
   
-  /* Tipografia */
+
   --font-title: 'Poppins', sans-serif;
   --font-body: 'Noto Sans', sans-serif;
 }
 
-/* Reset global */
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +31,7 @@ body {
   color: var(--color-text-dark);
   background-color: var(--color-bg-light);
   line-height: 1.6;
-  padding-top: 85px; /* Evita que o conteúdo fique debaixo do header fixo */
+  padding-top: 85px; 
 }
 
 a {
@@ -49,9 +49,7 @@ img {
   display: block;
 }
 
-/* ==========================================================================
-   2. COMPONENTES REUTILIZÁVEIS
-   ========================================================================== */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -110,9 +108,7 @@ img {
   font-size: 0.9rem;
 }
 
-/* ==========================================================================
-   3. NAVEGAÇÃO E CABEÇALHO (ANIMADO E RESPONSIVO)
-   ========================================================================== */
+
 .header {
   background-color: var(--color-bg-cream);
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -124,7 +120,7 @@ img {
   transition: all 0.3s ease-in-out;
 }
 
-/* Estado quando a página é rolada */
+
 .header.scrolled {
   background-color: rgba(252, 244, 216, 1);
   backdrop-filter: blur(10px);
@@ -162,7 +158,7 @@ img {
   transition: max-width 0.3s ease-in-out;
 }
 
-/* Animação da logo ao rolar */
+
 .header.scrolled .logo-img {
   max-width: 75px;
 }
@@ -184,7 +180,7 @@ img {
   color: var(--color-primary-cyan);
 }
 
-/* Botão Hambúrguer para Celulares */
+
 .hamburger {
   display: none;
   position: relative;
@@ -220,7 +216,7 @@ img {
   background-color: var(--color-accent-coral);
 }
 
-/* Animação do botão Hambúrguer quando ativo */
+
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg);
   
@@ -234,9 +230,7 @@ img {
   transform: rotate(-45deg);
 }
 
-/* ==========================================================================
-   4. SECÇÃO PRINCIPAL (HERO)
-   ========================================================================== */
+
 .hero {
   background: linear-gradient(rgba(0, 25, 83, 0.75), rgba(0, 25, 83, 0.75)), 
               url('https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
@@ -281,9 +275,7 @@ img {
   justify-content: center;
 }
 
-/* ==========================================================================
-   5. CARDÁPIO EM DESTAQUE
-   ========================================================================== */
+
 .menu-section {
   padding: 6rem 0;
   background-color: var(--color-bg-light);
@@ -343,9 +335,7 @@ img {
   opacity: 0.85;
 }
 
-/* ==========================================================================
-   6. SOBRE O RESTAURANTE
-   ========================================================================== */
+
 .about-section {
   padding: 6rem 0;
   background-color: var(--color-bg-cream);
@@ -376,9 +366,7 @@ img {
   font-size: 1.05rem;
 }
 
-/* ==========================================================================
-   7. RODAPÉ
-   ========================================================================== */
+
 .footer {
   background-color: var(--color-primary-navy);
   color: var(--color-white);
@@ -417,9 +405,7 @@ img {
   opacity: 0.6;
 }
 
-/* ==========================================================================
-   8. RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================================== */
+
 @media (max-width: 768px) {
   .nav-container {
     padding-inline: 1rem;
@@ -431,7 +417,7 @@ img {
   }
 
   .hamburger {
-    display: flex; /* Exibe o botão hambúrguer no celular */
+    display: flex; 
     margin-left: auto;
     z-index: 1001;
   }
@@ -454,7 +440,7 @@ img {
   }
 
   .nav-menu.active {
-    right: 0; /* Faz o menu deslizar para dentro da tela ao clicar */
+    right: 0; 
   }
 
   .nav-menu .nav-link {
